@@ -1,0 +1,61 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'maven'
+apply plugin: 'signing'
+
+version = '0.1-SNAPSHOT'
+
+sourceCompatibility = 1.7
+
+group = 'de.otto'
+
+repositories {
+    mavenCentral()
+
+    maven {
+        url 'https://oss.sonatype.org/content/repositories/snapshots/'
+    }
+}
+
+dependencies {
+    compile 'org.apache.wicket:wicket-core:6.5.0'
+    compile 'commons-lang:commons-lang:2.6'
+}
+
+jar {
+    manifest.attributes provider: 'gradle'
+}
+
+test {
+    useTestNG()
+}
+
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    classifier = 'javadoc'
+    from 'build/docs/javadoc'
+}
+
+task sourcesJar(type: Jar) {
+    from sourceSets.main.allSource
+    classifier = 'sources'
+}
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            repository(url: "https://oss.sonatype.org/service/local/staging/deploy/maven2/") {
+                authentication(userName: sonatypeUsername, password: sonatypePassword)
+            }
+            snapshotRepository(url: "https://oss.sonatype.org/content/repositories/snapshots/") {
+                authentication(userName: sonatypeUsername, password: sonatypePassword)
+            }
+        }
+    }
+}
+
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '1.2'
+}
+
