@@ -41,7 +41,17 @@ assertThat(link, is(not(nullValue())));
 
 ## Usage
 
+Selectors for components can be formed using the ComponentMatcherBuilder which uses a builder pattern:
 
+```java
+ComponentMatchers.type(BookmarkablePageLink.class).wicketId("link").visible();
+```
+
+Selectors can be combined together:
+
+```java
+ComponentMatchers.type(BookmarkablePageLink.class).wicketId("link").visible().havingChild(ComponentMatchers.type(BookmarkablePageLink.class));
+```
 
 ### Selectors
 
