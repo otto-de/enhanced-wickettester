@@ -102,22 +102,26 @@ ComponentMatcherBuilder<T> havingDirectParent(final ComponentMatcherBuilder<MT> 
 
 ### Enhanced wickettester functions
 
+#### Select a list of children
+
 ```java
 List<T> getChildrenMatching(final MarkupContainer root, final ComponentMatcherBuilder<T> builder)
 ```
 
 ```java
 List<T> getChildrenMatching(final ComponentMatcherBuilder<T> builder,
-            final ComponentMatcherBuilder<? extends MarkupContainer>... parentBuilders) 
+    final ComponentMatcherBuilder<? extends MarkupContainer>... parentBuilders) 
 ```
 
 ```java
 List<T> getChildrenMatching(final ComponentMatcherBuilder<T> builder) 
 ```
 
+#### Select a single child
+
 ```java
 T getChildMatching(final MarkupContainer root, final ComponentMatcherBuilder<T> builder,
-            final ComponentMatcherBuilder<? extends MarkupContainer>... parentBuilders)
+    final ComponentMatcherBuilder<? extends MarkupContainer>... parentBuilders)
 ```
 
 ```java
@@ -126,21 +130,23 @@ T getChildMatching(final MarkupContainer root, final ComponentMatcherBuilder<T> 
 
 ```java
 T getChildMatching(final ComponentMatcherBuilder<T> builder,
-            final ComponentMatcherBuilder<? extends MarkupContainer>... parentBuilders)
+    final ComponentMatcherBuilder<? extends MarkupContainer>... parentBuilders)
 ```
 
 ```java
 T getChildMatching(final ComponentMatcherBuilder<T> builder)
 ```
 
+#### Select first child of a list of children
+
 ```java
 T getFirstChildMatching(final MarkupContainer root, final ComponentMatcherBuilder<T> builder,
-            final ComponentMatcherBuilder<? extends MarkupContainer>... parentBuilders)
+    final ComponentMatcherBuilder<? extends MarkupContainer>... parentBuilders)
 ```
 
 ```java            
 T getFirstChildMatching(final ComponentMatcherBuilder<T> builder,
-            final ComponentMatcherBuilder<? extends MarkupContainer>... parentBuilders)
+    final ComponentMatcherBuilder<? extends MarkupContainer>... parentBuilders)
 ```
 
 ```java
@@ -151,6 +157,8 @@ T getFirstChildMatching(final MarkupContainer root, final ComponentMatcherBuilde
 T getFirstChildMatching(final ComponentMatcherBuilder<T> builder) 
 ```
 
+#### Get the wicket-path
+
 ```java
 String getPathRelativeToRoot(final Component root, final Component component) 
 ```
@@ -159,37 +167,47 @@ String getPathRelativeToRoot(final Component root, final Component component)
 getPathRelativeToPage(final Component component) 
 ```
 
+#### Create a TagTester for attribute testing
+
 ```java
 TagTester getTagTesterByComponent(final Component component) 
 ```
 
 ```java
 TagTester getTagTesterByComponentMatcher(final ComponentMatcherBuilder<? extends Component> builder,
-            final ComponentMatcherBuilder<? extends MarkupContainer>... parentBuilders) 
+    final ComponentMatcherBuilder<? extends MarkupContainer>... parentBuilders) 
 ```
+
+#### Create a FormTester
 
 ```java
 FormTester newFormTester(final Form<?> form)
 ```
 
 ```java
-FormTester newFormTester(@SuppressWarnings("rawtypes") final ComponentMatcherBuilder<? extends Form> builder,
-            final ComponentMatcherBuilder<? extends MarkupContainer>... parentBuilders)
+FormTester newFormTester(final ComponentMatcherBuilder<? extends Form> builder,
+    final ComponentMatcherBuilder<? extends MarkupContainer>... parentBuilders)
 ```
+
+#### Execution
 
 ```java
 clickLink(final ComponentMatcherBuilder<? extends Component> builder,
-            final ComponentMatcherBuilder<? extends MarkupContainer>... parentBuilders)
+    final ComponentMatcherBuilder<? extends MarkupContainer>... parentBuilders)
 ```
 
 ```java
-executeAjaxEvent(final String event, final ComponentMatcherBuilder<? extends Component> builder,
-            final ComponentMatcherBuilder<? extends MarkupContainer>... parentBuilders)
+executeAjaxEvent(final String event, 
+    final ComponentMatcherBuilder<? extends Component> builder,
+    final ComponentMatcherBuilder<? extends MarkupContainer>... parentBuilders)
 ```
 
+#### Assertion helpers
+
 ```java
-void assertModelValue(final Object expectedModelObject, final ComponentMatcherBuilder<? extends Component> builder,
-            final ComponentMatcherBuilder<? extends MarkupContainer>... parentBuilders)
+void assertModelValue(final Object expectedModelObject, 
+    final ComponentMatcherBuilder<? extends Component> builder,
+    final ComponentMatcherBuilder<? extends MarkupContainer>... parentBuilders)
 ```
 
 ```java
@@ -198,7 +216,7 @@ void assertVisible(final Component component)
 
 ```java
 void assertVisible(final ComponentMatcherBuilder<? extends Component> builder,
-            final ComponentMatcherBuilder<? extends MarkupContainer>... parentBuilders)
+    final ComponentMatcherBuilder<? extends MarkupContainer>... parentBuilders)
 ```
 
 ```java
@@ -206,7 +224,8 @@ void assertInvisible(final Label component)
 ```
 
 ```java
-void assertFeedback(final ComponentMatcherBuilder<? extends Component> builder, final String... feedback) 
+void assertFeedback(final ComponentMatcherBuilder<? extends Component> builder, 
+    final String... feedback) 
 ```
 
 ## Gradle, Maven
