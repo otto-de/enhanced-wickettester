@@ -50,7 +50,8 @@ ComponentMatchers.type(BookmarkablePageLink.class).wicketId("link").visible();
 Selectors can be combined together:
 
 ```java
-ComponentMatchers.type(BookmarkablePageLink.class).wicketId("link").visible().havingChild(ComponentMatchers.type(BookmarkablePageLink.class));
+ComponentMatchers.type(BookmarkablePageLink.class).wicketId("link").visible()
+    .havingChild(ComponentMatchers.type(BookmarkablePageLink.class));
 ```
 
 ### Selectors
