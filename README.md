@@ -164,7 +164,7 @@ String getPathRelativeToRoot(final Component root, final Component component)
 ```
 
 ```java
-getPathRelativeToPage(final Component component) 
+String getPathRelativeToPage(final Component component) 
 ```
 
 #### Create a TagTester for attribute testing
@@ -192,12 +192,12 @@ FormTester newFormTester(final ComponentMatcherBuilder<? extends Form> builder,
 #### Execution
 
 ```java
-clickLink(final ComponentMatcherBuilder<? extends Component> builder,
+void clickLink(final ComponentMatcherBuilder<? extends Component> builder,
     final ComponentMatcherBuilder<? extends MarkupContainer>... parentBuilders)
 ```
 
 ```java
-executeAjaxEvent(final String event, 
+void executeAjaxEvent(final String event, 
     final ComponentMatcherBuilder<? extends Component> builder,
     final ComponentMatcherBuilder<? extends MarkupContainer>... parentBuilders)
 ```
