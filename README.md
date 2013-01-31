@@ -2,11 +2,7 @@
 
 ## Description
 
-The WicketTester is a helper class to ease unit testing of wicket component and pages. 
-There is no need for a servlet container, because it uses a mocked servlet context and a mocked wicket application. 
-In the following it is possible to test the rendered page and the contained components. 
-This is mostly done by selecting components with their wicket path as string. As you can image this is a common error when
-refactoring components on pages which results in changed wicket paths. 
+The WicketTester is a helper class to ease unit testing of wicket component and pages. There is no need for a servlet container, because it uses a mocked servlet context and a mocked wicket application. In the following it is possible to test the rendered page and the contained components. This is mostly done by selecting components with their wicket path as string. As you can image this is a common error when refactoring components on pages which results in changed wicket paths. 
 
 The following example shows how the WicketTester renders an test page and asserts that a containing link is present to that page.
 
@@ -48,6 +44,54 @@ assertThat(link, is(not(nullValue())));
 
 
 ### Selectors
+
+```java
+ComponentMatcherBuilder<T> type(final Class<T> componentClass)
+```
+
+```java
+ComponentMatcherBuilder<T> wicketId(final String wicketId)
+```
+
+```java
+ComponentMatcherBuilder<T> visible()
+```
+
+```java
+ComponentMatcherBuilder<T> enabled()
+```
+
+```java
+ComponentMatcherBuilder<T> type(final Class<T> componentClass)
+```
+
+```java
+ComponentMatcherBuilder<T> not(final ComponentMatcherBuilder<T> builder)
+```
+
+```java
+ComponentMatcherBuilder<T> modelObject(final Object modelObject)
+```
+
+```java
+ComponentMatcherBuilder<T> havingChild(final ComponentMatcherBuilder<MT> builder)
+```
+
+```java
+ComponentMatcherBuilder<T> havingDirectChild(final ComponentMatcherBuilder<MT> builder)
+```
+
+```java
+ComponentMatcherBuilder<T> havingSibling(final ComponentMatcherBuilder<MT> builder)
+```
+
+```java
+ComponentMatcherBuilder<T> havingDirectParent(final ComponentMatcherBuilder<MT> builder)
+```
+
+
+
+
 
 ### Enhanced wickettester functions
 
