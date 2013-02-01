@@ -1,6 +1,5 @@
 package de.otto.wickettester;
 
-import static de.otto.wickettester.ComponentMatchers.type;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 
@@ -160,9 +159,6 @@ public class EnhancedWicketTester extends WicketTester {
 
         Assert.assertTrue(componentPath.startsWith(rootPath), "Component is not a child of the root component");
 
-        /*
-         * @see MarkupContainer#get(String).
-         */
         if (rootPath.length() == componentPath.length()) {
             return StringUtils.EMPTY;
         }
@@ -199,14 +195,6 @@ public class EnhancedWicketTester extends WicketTester {
         return StringUtils.join(tail, "_");
     }
 
-    /**
-     * Asserts the model value of a component.
-     * 
-     * @param component
-     *            the component
-     * @param expectedValue
-     *            expected value of the component's model
-     */
     public void assertModelValue(final Component component, final Object expectedModelObject) {
         assertThat(component.getDefaultModelObject(), equalTo(expectedModelObject));
     }
@@ -240,10 +228,6 @@ public class EnhancedWicketTester extends WicketTester {
 
     public void assertInvisible(final Label component) {
         assertInvisible(getPathRelativeToPage(component));
-    }
-
-    public Label getLabel(final String wicketId) {
-        return getChildMatching(type(Label.class).wicketId(wicketId));
     }
 
     public void clickLink(final ComponentMatcherBuilder<? extends Component> builder,

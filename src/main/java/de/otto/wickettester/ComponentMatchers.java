@@ -128,7 +128,7 @@ public class ComponentMatchers {
             return this;
         }
 
-        public <MT extends Component> ComponentMatcherBuilder havingSibling(final ComponentMatcherBuilder<MT> builder) {
+        public <MT extends Component> ComponentMatcherBuilder<T> havingSibling(final ComponentMatcherBuilder<MT> builder) {
             this.visitors.add(new HavingSiblingComponentMatcher<T, MT>(builder.build()));
             return this;
         }
