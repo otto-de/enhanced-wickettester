@@ -37,7 +37,7 @@ assertThat(link, is(not(nullValue())));
 ## Features
 
 - select components without the need of the wicket path
-- base wickettester functionality using component matches
+- base wickettester functionality using component matchers
 
 ## Usage
 
