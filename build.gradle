@@ -33,14 +33,23 @@ test {
     useTestNG()
 }
 
-task javadocJar(type: Jar, dependsOn: javadoc) {
+task packageJavadoc(type: Jar, dependsOn: 'javadoc') {
+    from javadoc.destinationDir
     classifier = 'javadoc'
-    from 'build/docs/javadoc'
 }
 
-task sourcesJar(type: Jar) {
+task packageSources(type: Jar) {
     from sourceSets.main.allSource
     classifier = 'sources'
+}
+
+artifacts {
+    archives packageJavadoc {
+        type = 'javadoc'
+    }
+    archives packageSources {
+        type = 'sources'
+    }
 }
 
 uploadArchives {
