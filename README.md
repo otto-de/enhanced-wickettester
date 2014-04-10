@@ -247,3 +247,7 @@ https://oss.sonatype.org/content/repositories/snapshots
 The current snapshot-release is 0.1.1-SNAPSHOT:
 
 * de.otto:enhanced-wickettester:0.1.1-SNAPSHOT
+
+## License
+
+Apache 2
