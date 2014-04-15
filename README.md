@@ -2,7 +2,7 @@
 
 ## Description
 
-The WicketTester is a helper class to ease unit testing of wicket component and pages. There is no need for a servlet container, because it uses a mocked servlet context and a mocked wicket application. In the following it is possible to test the rendered page and the contained components. This is mostly done by selecting components with their wicket path as string. As you can image this is a common error when refactoring components on pages which results in changed wicket paths. 
+The WicketTester is a helper class to ease unit testing of wicket component and pages. There is no need for a servlet container, because it uses a mocked servlet context and a mocked wicket application. In the following it is possible to test the rendered page and the contained components. This is mostly done by selecting components with their wicket path as string. As you can image this is a common error on refactoring components on pages which results in changed wicket paths. 
 
 The following example shows how the WicketTester renders a test page and asserts that a bookmarkable link is present to that page.
 
