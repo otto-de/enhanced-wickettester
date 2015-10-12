@@ -4,7 +4,7 @@ apply plugin: 'idea'
 apply plugin: 'maven'
 apply plugin: 'signing'
 
-version = '0.1-SNAPSHOT'
+version = '0.2-SNAPSHOT'
 
 sourceCompatibility = 1.7
 
@@ -19,7 +19,7 @@ repositories {
 }
 
 dependencies {
-    compile 'org.apache.wicket:wicket-core:6.5.0'
+    compile 'org.apache.wicket:wicket-core:7.0.0'
     compile 'commons-lang:commons-lang:2.6'
     compile 'org.hamcrest:hamcrest-all:1.3'
     compile 'org.testng:testng:6.1.1'
@@ -67,6 +67,6 @@ uploadArchives {
 
 
 task wrapper(type: Wrapper) {
-    gradleVersion = '1.2'
+    gradleVersion = '1.12'
 }
 
