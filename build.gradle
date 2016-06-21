@@ -1,12 +1,10 @@
-group = 'de.otto'
-
 apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'idea'
 apply plugin: 'maven'
 apply plugin: 'signing'
 
-version = '0.2-SNAPSHOT'
+version = '0.2'
 
 sourceCompatibility = 1.7
 
