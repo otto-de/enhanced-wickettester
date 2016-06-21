@@ -48,14 +48,50 @@ artifacts {
     archives packageSources
 }
 
+signing {
+    sign configurations.archives
+}
+
 uploadArchives {
     repositories {
         mavenDeployer {
+            beforeDeployment { MavenDeployment deployment -> signing.signPom(deployment) }
+
             repository(url: "https://oss.sonatype.org/service/local/staging/deploy/maven2/") {
                 authentication(userName: sonatypeUsername, password: sonatypePassword)
             }
             snapshotRepository(url: "https://oss.sonatype.org/content/repositories/snapshots/") {
                 authentication(userName: sonatypeUsername, password: sonatypePassword)
+            }
+            pom.version = "0.2"
+            pom.artifactId = "enhanced-wickettester"
+            pom.groupId = "de.otto"
+            pom.project {
+                name 'enhanced-wickettester'
+                packaging 'jar'
+                description 'A enhanced wickettester library'
+                url 'http://github.com/otto-de/enhanced-wickettester'
+
+                scm {
+                    url 'scm:git@github.com:otto-de/enhanced-wickettester.git'
+                    connection 'scm:git@github.com:otto-de/enhanced-wickettester.git'
+                    developerConnection 'scm:git@github.com:otto-de/enhanced-wickettester.git'
+                }
+
+                licenses {
+                    license {
+                        name 'The Apache Software License, Version 2.0'
+                        url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                        distribution 'repo'
+                    }
+                }
+
+                developers {
+                    developer {
+                        id 'sschmidt'
+                        name 'Stefan Schmidt'
+                    }
+                }
             }
         }
     }
