@@ -236,17 +236,17 @@ You can find all releases in Maven Central and in the public Sonatype repository
 
 https://oss.sonatype.org/content/repositories/releases
 
-The current release is 0.1.0:
+The current release is 0.2:
 
-* de.otto:enhanced-wickettester:0.1.0
+* de.otto:enhanced-wickettester:0.2
 
 For development usage you should use the snapshot instead:
 
 https://oss.sonatype.org/content/repositories/snapshots
 
-The current snapshot-release is 0.1.1-SNAPSHOT:
+The current snapshot-release is 0.3-SNAPSHOT:
 
-* de.otto:enhanced-wickettester:0.1.1-SNAPSHOT
+* de.otto:enhanced-wickettester:0.3-SNAPSHOT
 
 ## License
 
